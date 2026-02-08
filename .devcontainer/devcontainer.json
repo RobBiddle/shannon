@@ -1,0 +1,9 @@
+{
+  "name": "My Development Environment",
+  "image": "ghcr.io/upicsolutions/devcontainers/node-typescript-react:latest",
+  "remoteEnv": {
+    "CLAUDE_CODE_OAUTH_TOKEN": "${localEnv:CLAUDE_CODE_OAUTH_TOKEN}",
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+  },
+  "postAttachCommand": "[ -n \"$CLAUDE_CODE_OAUTH_TOKEN\" ] && claude --dangerously-skip-permissions || true"
+}
